@@ -4,11 +4,10 @@ from math import exp
 from math import pi
 
 class GaussianNB():
-    def __init__(self):
-        print("Call init")
+    def __init__(self, alpha=1.0):
+        self.alpha = alpha
     
     def __call__(self, X):
-        print("call __call__()")
         results = []
         for x in X:
             result = dict()
@@ -30,7 +29,6 @@ class GaussianNB():
         return results
 
     def fit(self, X, y):
-        print("call fit()")
         # identify classes
         classes = np.unique(y)
         self.cls_number = dict()
